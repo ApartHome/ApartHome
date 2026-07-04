@@ -1,0 +1,207 @@
+ <!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Квартира 241 – ApartHome</title>
+  <style>
+    /* Все стили такие же, как в index.html, плюс добавим стили для детальной страницы */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
+    body { background: #f8f9fc; color: #1e2a3a; line-height: 1.5; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    .header {
+      background: #fff; box-shadow: 0 2px 12px rgba(0,0,0,0.06); padding: 18px 0; position: sticky; top: 0; z-index: 10;
+    }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+    .logo { font-size: 24px; font-weight: 700; color: #0d6efd; }
+    .logo span { color: #1e2a3a; }
+    .contacts-header a { text-decoration: none; color: #1e2a3a; font-weight: 500; margin-left: 20px; }
+    .contacts-header a:hover { color: #0d6efd; }
+    .btn-phone { background: #0d6efd; color: #fff !important; padding: 8px 18px; border-radius: 30px; transition: 0.2s; }
+    .btn-phone:hover { background: #0b5ed7; }
+    .section { padding: 40px 0; }
+    .section-title { font-size: 28px; font-weight: 700; margin-bottom: 20px; }
+    .section-title::after { content: ''; display: block; width: 60px; height: 4px; background: #0d6efd; margin: 10px 0 0; border-radius: 4px; }
+    .btn-primary {
+      display: inline-block; background: #0d6efd; color: #fff; padding: 14px 40px; border-radius: 40px;
+      text-decoration: none; font-weight: 600; transition: 0.2s; border: none; cursor: pointer; font-size: 16px;
+    }
+    .btn-primary:hover { background: #0b5ed7; transform: translateY(-2px); }
+    .back-link { display: inline-block; margin-bottom: 20px; color: #0d6efd; text-decoration: none; font-weight: 500; }
+    .back-link:hover { text-decoration: underline; }
+
+    /* Блоки детальной страницы */
+    .hero-detail {
+      display: flex; flex-wrap: wrap; gap: 30px; background: #fff; padding: 30px; border-radius: 24px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06); margin-bottom: 30px;
+    }
+    .hero-detail .images {
+      flex: 1 1 300px;
+    }
+    .hero-detail .images img {
+      width: 100%; border-radius: 16px; margin-bottom: 10px;
+    }
+    .hero-detail .info {
+      flex: 2 1 300px;
+    }
+    .hero-detail .info h1 { font-size: 32px; margin-bottom: 10px; }
+    .hero-detail .info .price { font-size: 24px; font-weight: 700; color: #0d6efd; margin: 10px 0; }
+    .hero-detail .info .address { color: #5a6a7a; margin-bottom: 10px; }
+    .hero-detail .info .desc { font-size: 16px; margin-bottom: 20px; }
+
+    .detail-block {
+      background: #fff; padding: 30px; border-radius: 24px; box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      margin-bottom: 30px;
+    }
+    .detail-block h2 { font-size: 22px; margin-bottom: 15px; }
+    .detail-block ul { padding-left: 20px; }
+    .detail-block li { margin-bottom: 8px; }
+
+    .price-block {
+      display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between;
+    }
+    .price-item { flex: 1 1 150px; }
+    .price-item .label { color: #5a6a7a; font-size: 14px; }
+    .price-item .value { font-size: 26px; font-weight: 700; color: #0d6efd; }
+
+    .form-wrap {
+      background: #fff; padding: 30px; border-radius: 24px; max-width: 600px; margin: 0 auto;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    }
+    .form-wrap input, .form-wrap textarea {
+      width: 100%; padding: 14px 18px; border: 1px solid #dce3ed; border-radius: 12px; margin-bottom: 18px;
+      font-size: 15px; background: #fafbfc;
+    }
+    .form-wrap input:focus, .form-wrap textarea:focus {
+      outline: none; border-color: #0d6efd; box-shadow: 0 0 0 3px rgba(13,110,253,0.15);
+    }
+    .form-wrap label { font-weight: 500; display: block; margin-bottom: 6px; }
+    .form-wrap .btn-primary { width: 100%; text-align: center; }
+[04.07.2026 16:37] Оксана Райская: .footer { background: #1e2a3a; color: #b0c4db; padding: 30px 0; margin-top: 40px; text-align: center; }
+    .footer a { color: #b0c4db; text-decoration: none; margin: 0 12px; }
+    .footer a:hover { color: #fff; }
+    @media (max-width: 600px) {
+      .hero-detail { padding: 20px; }
+      .hero-detail .info h1 { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <div class="logo">🏠 <span>ApartHome</span></div>
+    <div class="contacts-header">
+      <a href="tel:+79165309584">📞 +7 (916) 530-95-84</a>
+      <a href="https://wa.me/79165309584" class="btn-phone">Написать в WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <a href="index.html" class="back-link">← Назад к списку квартир</a>
+
+    <!-- Детальная информация о квартире -->
+    <section class="section">
+      <div class="hero-detail">
+        <div class="images">
+          <img src="images/kv1_main.jpg" alt="Квартира 241">
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <img src="images/kv1_1.jpg" alt="Фото 1" style="width:calc(50% - 5px);">
+            <img src="images/kv1_2.jpg" alt="Фото 2" style="width:calc(50% - 5px);">
+            <img src="images/kv1_3.jpg" alt="Фото 3" style="width:calc(33% - 7px);">
+            <img src="images/kv1_4.jpg" alt="Фото 4" style="width:calc(33% - 7px);">
+            <img src="images/kv1_5.jpg" alt="Фото 5" style="width:calc(33% - 7px);">
+          </div>
+        </div>
+        <div class="info">
+          <h1>Уютная студия с дизайнерским ремонтом</h1>
+          <div class="address">📍 Калининец, 241</div>
+          <div class="price">4 000 ₽ / будни • 4 500 ₽ / выходные</div>
+          <div class="desc">
+            <p>Добро пожаловать в нашу уютную квартиру, где чистота — не просто слово, а наш главный принцип. Каждая деталь создана для вашего комфорта:</p>
+            <ul style="margin-top:10px; padding-left:20px;">
+              <li>🔥 Роскошная огромная кровать из натурального дерева с ортопедическим матрасом (2м*2м).</li>
+              <li>🔥 Мягкое и свежее белье из 100% хлопка, тщательно отпаренное.</li>
+              <li>Всё необходимое: шкаф-купе, телевизор (смарт ТВ), стиральная машинка, фен, сушилка, отпариватель, пылесос, холодильник, микроволновка, капсульная кофемашина Nespresso (приветственные капсулы), газовая плита, вытяжка, набор посуды, фильтр для воды с обратным осмосом, Wi-Fi.</li>
+            </ul>
+          </div>
+          <a href="#booking" class="btn-primary">Забронировать сейчас</a>
+        </div>
+      </div>
+
+      <!-- Правила и условия -->
+      <div class="detail-block">
+        <h2>📋 Важно знать</h2>
+        <ul>
+          <li>🚭 Курить запрещено (в том числе на балконе).</li>
+          <li>🔇 Шуметь после 21:00 запрещено.</li>
+          <li>👶 С детьми не заселяем.</li>
+          <li>🐾 Животные запрещены (без исключений).</li>
+          <li>🚫 Передача ключей третьим лицам запрещена.</li>
+          <li>🧹 Квартира сдаётся в том же виде – при необходимости генеральной уборки залог удерживается полностью.</li>
+          <li>🍾 За распитие спиртных напитков и жалобы соседей – моментальное выселение без возврата денег.</li>
+          <li>⛔ За нарушение правил залог не возвращается.</li>
+        </ul>
+        <p style="margin-top:15px;"><strong>Расчетное время:</strong> заезд с 14:00, выезд до 12:00 (другое время по договоренности). За досрочный выезд деньги не возвращаются.</p>
+        <p><strong>При заезде</strong> необходим паспорт для подписания договора и залог 4000₽ (возвращается при выезде). Предоставляются чек и договор, оплата для юр.лиц по счету.</p>
+      </div>
+
+      <!-- Цены -->
+      <div class="detail-block">
+        <h2>💰 Стоимость</h2>
+        <div class="price-block">
+      <div class="price-item"><span class="label">Будни (пн–чт)</span><div class="value">4 000 ₽</div></div>
+          <div class="price-item"><span class="label">Выходные (пт–вс)</span><div class="value">4 500 ₽</div></div>
+          <div class="price-item"><span class="label">Долгосрочно (от 10 суток)</span><div class="value">3 500 ₽</div><span class="label">скидка</span></div>
+          <div class="price-item"><span class="label">Залог</span><div class="value">4 000 ₽</div><span class="label">возвращается</span></div>
+        </div>
+      </div>
+
+      <!-- Форма бронирования -->
+      <div class="section" id="booking">
+        <h2 class="section-title">Забронировать эту квартиру</h2>
+        <div class="form-wrap">
+          <form action="https://formspree.io/f/ваш_код_формы" method="POST">
+            <input type="hidden" name="apartment" value="Калининец 241">
+            <label for="name">Ваше имя</label>
+            <input type="text" id="name" name="name" placeholder="Иван" required>
+            <label for="phone">Телефон</label>
+            <input type="tel" id="phone" name="phone" placeholder="+7 (912) 345-67-89" required>
+            <label for="dates">Даты заезда и выезда</label>
+            <input type="text" id="dates" name="dates" placeholder="Например: 10–13 июля">
+            <label for="guests">Количество гостей</label>
+            <input type="number" id="guests" name="guests" placeholder="2" min="1" max="2">
+            <label for="message">Комментарий (пожелания)</label>
+            <textarea id="message" name="message" rows="3" placeholder="Дополнительные пожелания..."></textarea>
+            <button type="submit" class="btn-primary">Отправить заявку</button>
+            <p style="font-size:13px; color:#5a6a7a; margin-top:12px; text-align:center;">После отправки я свяжусь с вами в течение 15 минут</p>
+          </form>
+        </div>
+      </div>
+
+      <!-- Карта -->
+      <div class="detail-block">
+        <h2>📍 Как нас найти</h2>
+        <div style="border-radius:16px; overflow:hidden;">
+          <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Aваш_идентификатор&source=constructor" width="100%" height="300" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+
+    </section>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>🏠 ApartHome — посуточная аренда в Калининце</p>
+    <p>
+      <a href="tel:+79165309584">+7 (916) 530-95-84</a>
+      <a href="mailto:r.oksanai@yandex.ru">r.oksanai@yandex.ru</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
