@@ -11,21 +11,52 @@
     .header {
       background: #fff; box-shadow: 0 2px 12px rgba(0,0,0,0.06); padding: 18px 0; position: sticky; top: 0; z-index: 10;
     }
-    .header-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-    .logo { font-size: 24px; font-weight: 700; color: #0d6efd; }
-    .logo span { color: #1e2a3a; }
-    .contacts-header a { text-decoration: none; color: #1e2a3a; font-weight: 500; margin-left: 20px; }
-    .contacts-header a:hover { color: #0d6efd; }
-    .btn-phone { background: #0d6efd; color: #fff !important; padding: 8px 18px; border-radius: 30px; transition: 0.2s; }
-    .btn-phone:hover { background: #0b5ed7; }
-    .section { padding: 40px 0; }
-    .section-title { font-size: 28px; font-weight: 700; margin-bottom: 20px; }
-    .section-title::after { content: ''; display: block; width: 60px; height: 4px; background: #0d6efd; margin: 10px 0 0; border-radius: 4px; }
-    .btn-primary {
-      display: inline-block; background: #0d6efd; color: #fff; padding: 14px 40px; border-radius: 40px;
-      text-decoration: none; font-weight: 600; transition: 0.2s; border: none; cursor: pointer; font-size: 16px;
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px 15px;
     }
-    .btn-primary:hover { background: #0b5ed7; transform: translateY(-2px); }
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: #0d6efd;
+      flex-shrink: 0;
+    }
+    .contacts-header {
+     display: flex;
+     align-items: center;
+     flex-wrap: wrap;
+     gap: 8px 12px;
+    }
+    .contacts-header a {
+      text-decoration: none;
+      color: #1e2a3a;
+      font-weight: 500;
+      font-size: 15px
+      white-space: nowrap;
+    }
+    .contacts-header a:hover { color: #0d6efd; }
+    .btn-phone {
+      background: #0d6efd;
+      color: #fff !important;
+      padding: 8px 18px;
+      border-radius: 30px;
+      transition: 0.2s;
+    }
+   .btn-phone { 
+    background: #0d6efd; 
+    color: #fff !important;
+    padding: 8px 16px;
+    border-radius: 30px;
+    transition: 0.2s;
+    font-size: 14px
+    white-space: nowrap;
+    }
+    .btn-phone:hover { 
+     background: #0b5ed7; }
+    }
     .back-link { display: inline-block; margin-bottom: 20px; color: #0d6efd; text-decoration: none; font-weight: 500; }
     .back-link:hover { text-decoration: underline; }
 
