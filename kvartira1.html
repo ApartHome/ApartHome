@@ -1,40 +1,10 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Квартира 241 – ApartHome</title>
   <style>
-   /* Картинки на детальной странице */
-.hero-detail .images img {
-  width: 100%;
-  max-height: 350px;
-  object-fit: cover;
-  border-radius: 16px;
-  margin-bottom: 10px;
-}
-
-/* Миниатюры (квадратные) */
-.thumbnails {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 10px;
-}
-.thumbnails img {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;      /* обрезает лишнее, сохраняя пропорции */
-  border-radius: 12px;
-  cursor: pointer;
-  transition: 0.2s;
-  flex-shrink: 0;         /* чтобы не сжимались */
-}
-.thumbnails img:hover {
-  opacity: 0.8;
-  transform: scale(1.03);
-}
-    /* Все стили такие же, как в index.html, плюс добавим стили для детальной страницы */
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
     body { background: #f8f9fc; color: #1e2a3a; line-height: 1.5; }
     .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
@@ -67,9 +37,34 @@
     .hero-detail .images {
       flex: 1 1 300px;
     }
-    .hero-detail .images img {
-      width: 100%; border-radius: 16px; margin-bottom: 10px;
+    .hero-detail .images img:first-child {
+      width: 100%;
+      max-height: 350px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin-bottom: 10px;
     }
+    /* Миниатюры — квадратные и ровные */
+    .thumbnails {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .thumbnails img {
+      width: 120px !important;
+      height: 120px !important;
+      object-fit: cover !important;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.2s;
+      flex-shrink: 0;
+      display: block;
+    }
+    .thumbnails img:hover {
+      opacity: 0.8;
+      transform: scale(1.03);
+    }
+
     .hero-detail .info {
       flex: 2 1 300px;
     }
@@ -95,7 +90,7 @@
 
     .form-wrap {
       background: #fff; padding: 30px; border-radius: 24px; max-width: 600px; margin: 0 auto;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
     }
     .form-wrap input, .form-wrap textarea {
       width: 100%; padding: 14px 18px; border: 1px solid #dce3ed; border-radius: 12px; margin-bottom: 18px;
@@ -106,12 +101,16 @@
     }
     .form-wrap label { font-weight: 500; display: block; margin-bottom: 6px; }
     .form-wrap .btn-primary { width: 100%; text-align: center; }
- .footer { background: #1e2a3a; color: #b0c4db; padding: 30px 0; margin-top: 40px; text-align: center; }
+    .footer { background: #1e2a3a; color: #b0c4db; padding: 30px 0; margin-top: 40px; text-align: center; }
     .footer a { color: #b0c4db; text-decoration: none; margin: 0 12px; }
     .footer a:hover { color: #fff; }
     @media (max-width: 600px) {
       .hero-detail { padding: 20px; }
       .hero-detail .info h1 { font-size: 26px; }
+      .thumbnails img {
+        width: 80px !important;
+        height: 80px !important;
+      }
     }
   </style>
 </head>
@@ -131,38 +130,35 @@
   <div class="container">
     <a href="index.html" class="back-link">← Назад к списку квартир</a>
 
-    <!-- Детальная информация о квартире -->
     <section class="section">
-    <!-- Блок с фотографиями (исправленный) -->
-<div class="hero-detail">
-  <div class="images">
-    <!-- Главное фото -->
-    <img src="kv1_main.jpg" alt="Квартира 241">
-    <!-- Миниатюры (дополнительные фото) -->
-    <div class="thumbnails">
-      <img src="kv1_1.jpg" alt="Фото 1">
-      <img src="kv1_2.jpg" alt="Фото 2">
-      <img src="kv1_3.jpg" alt="Фото 3">
-      <img src="kv1_4.jpg" alt="Фото 4">
-    </div>
-  </div>
-  <div class="info">
-    <h1>Уютная студия с дизайнерским ремонтом</h1>
-    <div class="address">📍 Калининец, 241</div>
-    <div class="price">4 000 ₽ / будни • 4 500 ₽ / выходные</div>
-    <div class="desc">
-      <p>Добро пожаловать в нашу уютную квартиру, где чистота — не просто слово, а наш главный принцип. Каждая деталь создана для вашего комфорта:</p>
-      <ul>
-        <li>🔥 Роскошная огромная кровать из натурального дерева с ортопедическим матрасом (2м*2м).</li>
-        <li>🔥 Мягкое и свежее белье из 100% хлопка, тщательно отпаренное.</li>
-        <li>Всё необходимое: шкаф-купе, телевизор (смарт ТВ), стиральная машинка, фен, сушилка, отпариватель, пылесос, холодильник, микроволновка, капсульная кофемашина Nespresso (приветственные капсулы), газовая плита, вытяжка, набор посуды, фильтр для воды с обратным осмосом, Wi-Fi.</li>
-      </ul>
-    </div>
-    <a href="#booking" class="btn-primary">Забронировать сейчас</a>
-  </div>
-</div>
+      <div class="hero-detail">
+        <div class="images">
+          <!-- Главное фото -->
+          <img src="kv1_main.jpg" alt="Квартира 241">
+          <!-- Миниатюры — теперь они квадратные -->
+          <div class="thumbnails">
+            <img src="kv1_1.jpg" alt="Фото 1">
+            <img src="kv1_2.jpg" alt="Фото 2">
+            <img src="kv1_3.jpg" alt="Фото 3">
+            <img src="kv1_4.jpg" alt="Фото 4">
+          </div>
+        </div>
+        <div class="info">
+          <h1>Уютная студия с дизайнерским ремонтом</h1>
+          <div class="address">📍 Калининец, 241</div>
+          <div class="price">4 000 ₽ / будни • 4 500 ₽ / выходные</div>
+          <div class="desc">
+            <p>Добро пожаловать в нашу уютную квартиру, где чистота — не просто слово, а наш главный принцип. Каждая деталь создана для вашего комфорта:</p>
+            <ul>
+              <li>🔥 Роскошная огромная кровать из натурального дерева с ортопедическим матрасом (2м*2м).</li>
+              <li>🔥 Мягкое и свежее белье из 100% хлопка, тщательно отпаренное.</li>
+              <li>Всё необходимое: шкаф-купе, телевизор (смарт ТВ), стиральная машинка, фен, сушилка, отпариватель, пылесос, холодильник, микроволновка, капсульная кофемашина Nespresso (приветственные капсулы), газовая плита, вытяжка, набор посуды, фильтр для воды с обратным осмосом, Wi-Fi.</li>
+            </ul>
+          </div>
+          <a href="#booking" class="btn-primary">Забронировать сейчас</a>
+        </div>
+      </div>
 
-      <!-- Правила и условия -->
       <div class="detail-block">
         <h2>📋 Важно знать</h2>
         <ul>
@@ -173,24 +169,21 @@
           <li>🚫 Передача ключей третьим лицам запрещена.</li>
           <li>🧹 Квартира сдаётся в том же виде – при необходимости генеральной уборки залог удерживается полностью.</li>
           <li>🍾 За распитие спиртных напитков и жалобы соседей – моментальное выселение без возврата денег.</li>
-          <li>⛔ За нарушение правил залог не возвращается.</li>
+          <li>⛔️ За нарушение правил залог не возвращается.</li>
         </ul>
         <p style="margin-top:15px;"><strong>Расчетное время:</strong> заезд с 14:00, выезд до 12:00 (другое время по договоренности). За досрочный выезд деньги не возвращаются.</p>
         <p><strong>При заезде</strong> необходим паспорт для подписания договора и залог 4000₽ (возвращается при выезде). Предоставляются чек и договор, оплата для юр.лиц по счету.</p>
       </div>
-
-      <!-- Цены -->
-      <div class="detail-block">
+   <div class="detail-block">
         <h2>💰 Стоимость</h2>
         <div class="price-block">
-      <div class="price-item"><span class="label">Будни (пн–чт)</span><div class="value">4 000 ₽</div></div>
+          <div class="price-item"><span class="label">Будни (пн–чт)</span><div class="value">4 000 ₽</div></div>
           <div class="price-item"><span class="label">Выходные (пт–вс)</span><div class="value">4 500 ₽</div></div>
           <div class="price-item"><span class="label">Долгосрочно (от 10 суток)</span><div class="value">3 500 ₽</div><span class="label">скидка</span></div>
           <div class="price-item"><span class="label">Залог</span><div class="value">4 000 ₽</div><span class="label">возвращается</span></div>
         </div>
       </div>
 
-      <!-- Форма бронирования -->
       <div class="section" id="booking">
         <h2 class="section-title">Забронировать эту квартиру</h2>
         <div class="form-wrap">
@@ -212,7 +205,6 @@
         </div>
       </div>
 
-      <!-- Карта -->
       <div class="detail-block">
         <h2>📍 Как нас найти</h2>
         <div style="border-radius:16px; overflow:hidden;">
