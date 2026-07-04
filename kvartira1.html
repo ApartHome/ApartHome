@@ -14,21 +14,25 @@
   margin-bottom: 10px;
 }
 
+/* Миниатюры (квадратные) */
 .thumbnails {
   display: flex;
-  gap: 8px;
+  gap: 10px;
   flex-wrap: wrap;
+  margin-top: 10px;
 }
 .thumbnails img {
-  width: calc(25% - 6px);  /* по 4 в ряд, можно поменять на 33% для 3-х */
-  height: 100px;
-  object-fit: cover;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;      /* обрезает лишнее, сохраняя пропорции */
   border-radius: 12px;
   cursor: pointer;
   transition: 0.2s;
+  flex-shrink: 0;         /* чтобы не сжимались */
 }
 .thumbnails img:hover {
   opacity: 0.8;
+  transform: scale(1.03);
 }
     /* Все стили такие же, как в index.html, плюс добавим стили для детальной страницы */
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
