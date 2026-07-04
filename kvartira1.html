@@ -5,6 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Квартира 241 – ApartHome</title>
   <style>
+   /* Картинки на детальной странице */
+.hero-detail .images img {
+  width: 100%;
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 10px;
+}
+
+.thumbnails {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.thumbnails img {
+  width: calc(25% - 6px);  /* по 4 в ряд, можно поменять на 33% для 3-х */
+  height: 100px;
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.thumbnails img:hover {
+  opacity: 0.8;
+}
     /* Все стили такие же, как в index.html, плюс добавим стили для детальной страницы */
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
     body { background: #f8f9fc; color: #1e2a3a; line-height: 1.5; }
@@ -104,29 +129,34 @@
 
     <!-- Детальная информация о квартире -->
     <section class="section">
-      <div class="thumbnails">
-        <img src="kv1_main.jpg" alt="Квартира 241">
-            <img src="kv1_1.jpg" alt="Фото 1" 
-            <img src="kv1_2.jpg" alt="Фото 2" ="width:calc(50% - 5px);">
-            <img src="kv1_3.jpg" alt="Фото 3" ="width:calc(33% - 7px);">
-            <img src="kv1_4.jpg" alt="Фото 4" 
-           </div>
-        </div>
-        <div class="info">
-          <h1>Уютная студия с дизайнерским ремонтом</h1>
-          <div class="address">📍 Калининец, 241</div>
-          <div class="price">4 000 ₽ / будни • 4 500 ₽ / выходные</div>
-          <div class="desc">
-            <p>Добро пожаловать в нашу уютную квартиру, где чистота — не просто слово, а наш главный принцип. Каждая деталь создана для вашего комфорта:</p>
-            <ul style="margin-top:10px; padding-left:20px;">
-              <li>🔥 Роскошная огромная кровать из натурального дерева с ортопедическим матрасом (2м*2м).</li>
-              <li>🔥 Мягкое и свежее белье из 100% хлопка, тщательно отпаренное.</li>
-              <li>Всё необходимое: шкаф-купе, телевизор (смарт ТВ), стиральная машинка, фен, сушилка, отпариватель, пылесос, холодильник, микроволновка, капсульная кофемашина Nespresso (приветственные капсулы), газовая плита, вытяжка, набор посуды, фильтр для воды с обратным осмосом, Wi-Fi.</li>
-            </ul>
-          </div>
-          <a href="#booking" class="btn-primary">Забронировать сейчас</a>
-        </div>
-      </div>
+    <!-- Блок с фотографиями (исправленный) -->
+<div class="hero-detail">
+  <div class="images">
+    <!-- Главное фото -->
+    <img src="kv1_main.jpg" alt="Квартира 241">
+    <!-- Миниатюры (дополнительные фото) -->
+    <div class="thumbnails">
+      <img src="kv1_1.jpg" alt="Фото 1">
+      <img src="kv1_2.jpg" alt="Фото 2">
+      <img src="kv1_3.jpg" alt="Фото 3">
+      <img src="kv1_4.jpg" alt="Фото 4">
+    </div>
+  </div>
+  <div class="info">
+    <h1>Уютная студия с дизайнерским ремонтом</h1>
+    <div class="address">📍 Калининец, 241</div>
+    <div class="price">4 000 ₽ / будни • 4 500 ₽ / выходные</div>
+    <div class="desc">
+      <p>Добро пожаловать в нашу уютную квартиру, где чистота — не просто слово, а наш главный принцип. Каждая деталь создана для вашего комфорта:</p>
+      <ul>
+        <li>🔥 Роскошная огромная кровать из натурального дерева с ортопедическим матрасом (2м*2м).</li>
+        <li>🔥 Мягкое и свежее белье из 100% хлопка, тщательно отпаренное.</li>
+        <li>Всё необходимое: шкаф-купе, телевизор (смарт ТВ), стиральная машинка, фен, сушилка, отпариватель, пылесос, холодильник, микроволновка, капсульная кофемашина Nespresso (приветственные капсулы), газовая плита, вытяжка, набор посуды, фильтр для воды с обратным осмосом, Wi-Fi.</li>
+      </ul>
+    </div>
+    <a href="#booking" class="btn-primary">Забронировать сейчас</a>
+  </div>
+</div>
 
       <!-- Правила и условия -->
       <div class="detail-block">
