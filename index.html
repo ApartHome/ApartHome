@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Квартиры посуточно в рп.Калининец — ваш лендинг</title>
+  <title>ApartHome – Квартиры посуточно в Калининце</title>
   <style>
     * {
       margin: 0;
@@ -21,7 +21,6 @@
       margin: 0 auto;
       padding: 0 20px;
     }
-
     /* Шапка */
     .header {
       background: #ffffff;
@@ -42,18 +41,14 @@
       font-weight: 700;
       color: #0d6efd;
     }
-    .logo span {
-      color: #1e2a3a;
-    }
+    .logo span { color: #1e2a3a; }
     .contacts-header a {
       text-decoration: none;
       color: #1e2a3a;
       font-weight: 500;
       margin-left: 20px;
     }
-    .contacts-header a:hover {
-      color: #0d6efd;
-    }
+    .contacts-header a:hover { color: #0d6efd; }
     .btn-phone {
       background: #0d6efd;
       color: #fff !important;
@@ -61,11 +56,8 @@
       border-radius: 30px;
       transition: 0.2s;
     }
-    .btn-phone:hover {
-      background: #0b5ed7;
-    }
+    .btn-phone:hover { background: #0b5ed7; }
 
-    /* Секции */
     .section {
       padding: 50px 0;
     }
@@ -85,204 +77,79 @@
       border-radius: 4px;
     }
 
-    /* Герой */
-    .hero {
-      background: linear-gradient(135deg, #e8f0fe 0%, #d4e2f7 100%);
-      border-radius: 24px;
-      padding: 50px 40px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 40px;
+    /* Сетка карточек квартир */
+    .apartments-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
       margin-top: 20px;
     }
-    .hero-text {
-      flex: 1 1 300px;
-    }
-    .hero-text h1 {
-      font-size: 40px;
-      font-weight: 800;
-      line-height: 1.2;
-      margin-bottom: 20px;
-    }
-    .hero-text p {
-      font-size: 18px;
-      color: #2c3e50;
-      margin-bottom: 25px;
-    }
-    .hero-image {
-      flex: 1 1 300px;
-      background: #b0c8e6;
+    .apartment-card {
+      background: #fff;
       border-radius: 20px;
-      height: 240px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      transition: 0.2s;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-weight: 600;
-      font-size: 18px;
-      background-image: url('https://via.placeholder.com/600x400?text=Ваше+фото+квартиры');
-      background-size: cover;
-      background-position: center;
+      flex-direction: column;
     }
-    .btn-primary {
+    .apartment-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+    .apartment-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background: #d9e2ef;
+    }
+    .apartment-info {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .apartment-info h3 {
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+    .apartment-info .address {
+      font-size: 14px;
+      color: #5a6a7a;
+      margin-bottom: 8px;
+    }
+    .apartment-info .price {
+      font-size: 22px;
+      font-weight: 700;
+      color: #0d6efd;
+      margin: 8px 0;
+    }
+    .apartment-info .short-desc {
+      color: #5a6a7a;
+      font-size: 14px;
+      margin-bottom: 15px;
+      flex: 1;
+    }
+    .apartment-info .btn-primary {
       display: inline-block;
       background: #0d6efd;
       color: #fff;
-      padding: 14px 40px;
+      padding: 10px 24px;
       border-radius: 40px;
       text-decoration: none;
       font-weight: 600;
+      font-size: 14px;
+      text-align: center;
       transition: 0.2s;
       border: none;
       cursor: pointer;
-      font-size: 16px;
+      align-self: flex-start;
     }
-    .btn-primary:hover {
+    .apartment-info .btn-primary:hover {
       background: #0b5ed7;
       transform: translateY(-2px);
     }
 
-    /* Преимущества */
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 25px;
-      text-align: center;
-    }
-    .feature-item {
-      background: #fff;
-      padding: 25px 15px;
-      border-radius: 18px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-    }
-    .feature-item .icon {
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
-    .feature-item h4 {
-      font-size: 18px;
-      margin-bottom: 6px;
-    }
-    .feature-item p {
-      color: #5a6a7a;
-      font-size: 14px;
-    }
-
-    /* Галерея */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-    }
-    .gallery-grid img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 16px;
-      background: #d9e2ef;
-    }
- /* Цены и описание */
-    .price-block {
-      background: #fff;
-      padding: 30px;
-      border-radius: 24px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      justify-content: space-between;
-    }
-    .price-item {
-      flex: 1 1 200px;
-    }
-    .price-item .label {
-      color: #5a6a7a;
-      font-size: 14px;
-    }
-    .price-item .value {
-      font-size: 28px;
-      font-weight: 700;
-      color: #0d6efd;
-    }
-    .price-item .note {
-      font-size: 14px;
-      color: #5a6a7a;
-    }
-
-    /* Форма */
-    .form-wrap {
-      background: #fff;
-      padding: 40px 30px;
-      border-radius: 24px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-      max-width: 580px;
-      margin: 0 auto;
-    }
-    .form-wrap input, .form-wrap textarea {
-      width: 100%;
-      padding: 14px 18px;
-      border: 1px solid #dce3ed;
-      border-radius: 12px;
-      margin-bottom: 18px;
-      font-size: 15px;
-      transition: 0.2s;
-      background: #fafbfc;
-    }
-    .form-wrap input:focus, .form-wrap textarea:focus {
-      outline: none;
-      border-color: #0d6efd;
-      box-shadow: 0 0 0 3px rgba(13,110,253,0.15);
-    }
-    .form-wrap label {
-      font-weight: 500;
-      display: block;
-      margin-bottom: 6px;
-    }
-    .form-wrap .btn-primary {
-      width: 100%;
-      justify-content: center;
-      text-align: center;
-    }
-
-    /* Отзывы (заглушка) */
-    .reviews-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-    .review-card {
-      background: #fff;
-      padding: 24px;
-      border-radius: 18px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-    }
-    .review-card .author {
-      font-weight: 600;
-      margin-top: 12px;
-    }
-    .review-card .date {
-      font-size: 13px;
-      color: #5a6a7a;
-    }
-    .stars {
-      color: #f7b731;
-      letter-spacing: 2px;
-    }
-
-    /* Карта (iframe) */
-    .map-wrap {
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
-    }
-    .map-wrap iframe {
-      width: 100%;
-      height: 320px;
-      border: 0;
-    }
-
-    /* Футер */
     .footer {
       background: #1e2a3a;
       color: #b0c4db;
@@ -295,13 +162,8 @@
       text-decoration: none;
       margin: 0 12px;
     }
-    .footer a:hover {
-      color: #fff;
-    }
-
+    .footer a:hover { color: #fff; }
     @media (max-width: 600px) {
-      .hero { padding: 30px 20px; }
-      .hero-text h1 { font-size: 28px; }
       .section-title { font-size: 26px; }
       .contacts-header a { margin-left: 12px; font-size: 14px; }
       .logo { font-size: 20px; }
@@ -309,9 +171,7 @@
   </style>
 </head>
 <body>
-
-<!-- ШАПКА -->
-<header class="header">
+ <header class="header">
   <div class="container header-inner">
     <div class="logo">🏠 <span>ApartHome</span></div>
     <div class="contacts-header">
@@ -323,159 +183,104 @@
 
 <main>
   <div class="container">
-
-    <!-- ГЕРОЙ -->
     <section class="section">
-      <div class="hero">
-        <div class="hero-text">
-          <h1>Квартиры посуточно в рп.Калининец рядом с КПП</h1>
-          <p>Идеально для командировок, отпуска или романтического отдыха. Рядом КПП, парк, магазины и кафе.</p>
-          <a href="#booking" class="btn-primary">Забронировать сейчас</a>
+      <h1 class="section-title">Наши квартиры в Калининце</h1>
+      <p style="text-align:center; margin-bottom:40px; font-size:18px;">Выберите подходящий вариант и забронируйте прямо сейчас</p>
+
+      <div class="apartments-grid">
+        <!-- Квартира 1 -->
+        <div class="apartment-card">
+          <img src="images/kv1.jpg" alt="Квартира Калининец 241">
+          <div class="apartment-info">
+            <h3>Уютная студия с дизайнерским ремонтом</h3>
+            <div class="address">📍 Калининец, 241</div>
+            <div class="price">от 4 000 ₽/сутки</div>
+            <div class="short-desc">Роскошная кровать 2×2 м, хлопковое бельё, капсульная кофемашина, идеальная чистота.</div>
+            <a href="kvartira1.html" class="btn-primary">Подробнее →</a>
+          </div>
         </div>
-        <div class="hero-image" style="background-image: url('https://i.imgur.com/Z2AM01d.png');">
-         <!-- https://imgur.com/a/tYcrGK7 -->
+
+        <!-- Квартира 2 -->
+        <div class="apartment-card">
+          <img src="images/kv2.jpg" alt="Квартира Калининец 243">
+          <div class="apartment-info">
+            <h3>Светлая квартира с парящей кроватью</h3>
+            <div class="address">📍 Калининец, 243</div>
+            <div class="price">от 4 000 ₽/сутки</div>
+            <div class="short-desc">1-й этаж, кровать 160 см с подсветкой, кресло-кровать, бактерицидная обработка.</div>
+            <a href="kvartira2.html" class="btn-primary">Подробнее →</a>
+          </div>
+        </div>
+
+        <!-- Квартира 3 -->
+        <div class="apartment-card">
+          <img src="images/kv3.jpg" alt="Квартира Калининец 249">
+          <div class="apartment-info">
+            <h3>Светлая квартира с балконом</h3>
+            <div class="address">📍 Калининец, 249</div>
+            <div class="price">от 4 000 ₽/сутки</div>
+            <div class="short-desc">Свежий ремонт, балкон для курящих, кровать+кресло-кровать, кофемашина.</div>
+            <a href="kvartira3.html" class="btn-primary">Подробнее →</a>
+          </div>
+        </div>
+
+        <!-- Квартира 4 -->
+        <div class="apartment-card">
+          <img src="images/kv4.jpg" alt="Квартира Калининец 259">
+          <div class="apartment-info">
+            <h3>Просторная с лаунж-балконом</h3>
+            <div class="address">📍 Калининец, 259</div>
+            <div class="price">от 4 000 ₽/сутки</div>
+            <div class="short-desc">38,4 м², двуспальная кровать + диван-кровать, утеплённый балкон со столиком.</div>
+            <a href="kvartira4.html" class="btn-primary">Подробнее →</a>
+          </div>
+        </div>
+
+        <!-- Квартира 5 -->
+        <div class="apartment-card">
+          <img src="images/kv5.jpg" alt="Квартира Калининец 257">
+          <div class="apartment-info">
+            <h3>Компактная на 1-м этаже</h3>
+            <div class="address">📍 Калининец, 257</div>
+            <div class="price">от 3 500 ₽/сутки</div>
+            <div class="short-desc">1-й этаж, кровать 160 см + раскладной диван, капельная кофемашина, плойка для волос.</div>
+            <a href="kvartira5.html" class="btn-primary">Подробнее →</a>
+          </div>
+        </div>
+
+        <!-- Квартира 6 -->
+        <div class="apartment-card">
+          <img src="images/kv6.jpg" alt="Квартира Калининец 246">
+          <div class="apartment-info">
+            <h3>Комфортная с балконом и кондиционером</h3>
+            <div class="address">📍 Калининец, 246</div>
+            <div class="price">от 3 500 ₽/сутки</div>
+            <div class="short-desc">4 спальных места (2 дивана), балкон для курения, напольный кондиционер Bork.</div>
+            <a href="kvartira6.html" class="btn-primary">Подробнее →</a>
+          </div>
+        </div>
+ <!-- Квартира 7 -->
+        <div class="apartment-card">
+          <img src="images/kv7.jpg" alt="Квартира Калининец 241_2">
+          <div class="apartment-info">
+            <h3>Уютная для 4 гостей</h3>
+            <div class="address">📍 Калининец, 241 (2-я)</div>
+            <div class="price">от 3 500 ₽/сутки</div>
+            <div class="short-desc">Кровать 140 см + диван 140 см, два телевизора, фильтр для воды.</div>
+            <a href="kvartira7.html" class="btn-primary">Подробнее →</a>
+          </div>
         </div>
       </div>
     </section>
-
-    <!-- ПРЕИМУЩЕСТВА -->
-    <section class="section">
-      <h2 class="section-title">Почему выбирают нас</h2>
-       <div class="features-grid">
-        <div class="feature-item">
-          <div class="icon">🛋️</div>
-          <h4>Уютная и комфортная атмосфера</h4>
-          <p>Вся необходимая мебель, техника, всё продумано до мелочей</p>
-        </div>
-        <div class="feature-item">
-          <div class="icon">📍</div>
-          <h4>Идеальное расположение</h4>
-          <p>5 минут до КПП, рядом Дикси, Магнит, Пятёрочка, ВБ/Озон, В/Ч и парк Дубки</p>
-        </div>
-        <div class="feature-item">
-          <div class="icon">🧼</div>
-          <h4>Идеальная чистота</h4>
-          <p>Профессиональная уборка перед каждым заездом</p>
-        </div>
-        <div class="feature-item">
-          <div class="icon">🔐</div>
-          <h4>Безопасно</h4>
-          <p>Домофон, видеонаблюдение, надёжный хозяин</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ГАЛЕРЕЯ -->
-    <section class="section">
-      <h2 class="section-title">Фотографии квартиры</h2>
-      <div class="gallery-grid">
-        <!-- Замените src на свои изображения -->
-        <img src="https://via.placeholder.com/400x300?text=Кухня" alt="Кухня">
-        <img src="https://i.imgur.com/Z2AM01d.png">
-        <img src="https://imgur.com/a/tYcrGK7" alt="Гостиная">
-        <img src="https://via.placeholder.com/400x300?text=Ванная" alt="Ванная">
-      </div>
-    </section>
-
-    <!-- ЦЕНЫ и ОПИСАНИЕ -->
-    <section class="section">
-      <h2 class="section-title">Стоимость и условия</h2>
-      <div class="price-block">
-        <div class="price-item">
-          <div class="label">Будни (пн–чт)</div>
-          <div class="value">3 500 ₽</div>
-          <div class="note">за сутки</div>
-        </div>
-        <div class="price-item">
-          <div class="label">Выходные (пт–вс)</div>
-          <div class="value">4 000 ₽</div>
-          <div class="note">за сутки</div>
-        </div>
-        <div class="price-item">
-          <div class="label">Долгосрочно (от 10 суток)</div>
-          <div class="value">3 000 ₽</div>
-          <div class="note">скидка 15%</div>
-        </div>
-        <div class="price-item">
-          <div class="label">Залог</div>
-          <div class="value">4 000 ₽</div>
-          <div class="note">возвращается при выезде</div>
-        </div>
-      </div>
-      <p style="text-align:center; margin-top:20px; color:#2c3e50;">Включено: Wi‑Fi, постельное бельё, полотенца, гигиенические средства, бытовая химия.</p>
-    </section>
-
-    <!-- ФОРМА БРОНИРОВАНИЯ -->
-    <section class="section" id="booking">
-      <h2 class="section-title">Забронировать</h2>
-      <div class="form-wrap">
-        <form action="https://formspree.io/f/ваш_код_формы" method="POST">
-          <!-- замените action на свой эндпоинт или оставьте для теста -->
-          <label for="name">Ваше имя</label>
-          <input type="text" id="name" name="name" placeholder="Иван" required>
-
-          <label for="phone">Телефон</label>
-          <input type="tel" id="phone" name="phone" placeholder="+7 (912) 345-67-89" required>
-
-          <label for="dates">Даты заезда и выезда</label>
-          <input type="text" id="dates" name="dates" placeholder="Например: 10–13 июля">
-
-          <label for="guests">Количество гостей</label>
-          <input type="number" id="guests" name="guests" placeholder="2" min="1" max="6">
-
-          <label for="message">Комментарий (пожелания)</label>
-          <textarea id="message" name="message" rows="3" placeholder="Нужно детское кресло, поздний заезд..."></textarea>
-
-          <button type="submit" class="btn-primary">Отправить заявку</button>
-          <p style="font-size:13px; color:#5a6a7a; margin-top:12px; text-align:center;">После отправки я свяжусь с вами в течение 15 минут</p>
-        </form>
-      </div>
-    </section>
-
-    <!-- ОТЗЫВЫ (пример) -->
-    <section class="section">
-     <h2 class="section-title">Отзывы гостей</h2>
-      <div class="reviews-grid">
-        <div class="review-card">
-          <div class="stars">★★★★★</div>
-          <p>Отличная квартира! Чисто, уютно, всё как на фото. Хозяин приятный, заселили раньше времени. Спасибо!</p>
-          <div class="author">— Екатерина, Москва</div>
-          <div class="date">июнь 2026</div>
-        </div>
-        <div class="review-card">
-          <div class="stars">★★★★★</div>
-          <p>Останавливались на 3 дня. Рядом метро, тихий двор. В квартире есть всё необходимое, даже кофе-машина.</p>
-          <div class="author">— Дмитрий, Санкт-Петербург</div>
-          <div class="date">май 2026</div>
-        </div>
-        <div class="review-card">
-          <div class="stars">★★★★☆</div>
-          <p>Хорошее место, но немного шумно от дороги. В остальном всё супер, рекомендую для командировок.</p>
-          <div class="author">— Ольга, Казань</div>
-          <div class="date">апрель 2026</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- КАРТА -->
-    <section class="section">
-      <h2 class="section-title">Как нас найти</h2>
-      <div class="map-wrap">
-        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Aваш_идентификатор&source=constructor" allowfullscreen></iframe>
-        <!-- замените src на ссылку своей Яндекс-карты -->
-      </div>
-    </section>
-
   </div>
 </main>
 
-<!-- ФУТЕР -->
 <footer class="footer">
   <div class="container">
     <p style="margin-bottom:8px;">🏠 ApartHome — посуточная аренда в Калининце</p>
     <p>
       <a href="tel:+79165309584">+7 (916) 530-95-84</a>
-      <a href="mailto:r.oksanai@yandex.ru">host@example.com</a>
+      <a href="mailto:r.oksanai@yandex.ru">r.oksanai@yandex.ru</a>
       <a href="#">Политика конфиденциальности</a>
     </p>
     <p style="margin-top:12px; font-size:13px;">© 2026 Все права защищены</p>
