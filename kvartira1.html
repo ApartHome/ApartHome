@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
+<!-- Подключение Lightbox2 (CSS) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -166,8 +168,22 @@
         height: 80px !important;
       }
     }
+  #booking .section-title {
+  text-align: center;
+  width: 100%;
+}
+    .images a {
+  display: block;        /* чтобы ссылка занимала всю ширину картинки */
+  text-decoration: none; /* убираем подчёркивание */
+}
+.thumbnails a {
+  display: block;
+  text-decoration: none;
+}
   </style>
 </head>
+<!-- Подключение Lightbox2 (CSS) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">  
 <body>
 
 <header class="header">
@@ -186,17 +202,30 @@
 
     <section class="section">
       <div class="hero-detail">
-        <div class="images">
-          <!-- Главное фото -->
-          <img src="kv1_main.jpg" alt="Квартира 241">
-          <!-- Миниатюры — теперь они квадратные -->
-          <div class="thumbnails">
-            <img src="kv1_1.jpg" alt="Фото 1">
-            <img src="kv1_2.jpg" alt="Фото 2">
-            <img src="kv1_3.jpg" alt="Фото 3">
-            <img src="kv1_4.jpg" alt="Фото 4">
-          </div>
-        </div>
+       <div class="images">
+  <!-- Главное фото -->
+  <a href="kv1_main.jpg" data-lightbox="gallery1" data-title="Квартира 241 - главная">
+    <img src="kv1_main.jpg" alt="Квартира 241">
+  </a>
+  <!-- Миниатюры -->
+  <div class="thumbnails">
+    <a href="kv1_1.jpg" data-lightbox="gallery1" data-title="Фото 1">
+      <img src="kv1_1.jpg" alt="Фото 1">
+    </a>
+    <a href="kv1_2.jpg" data-lightbox="gallery1" data-title="Фото 2">
+      <img src="kv1_2.jpg" alt="Фото 2">
+    </a>
+    <a href="kv1_3.jpg" data-lightbox="gallery1" data-title="Фото 3">
+      <img src="kv1_3.jpg" alt="Фото 3">
+    </a>
+    <a href="kv1_4.jpg" data-lightbox="gallery1" data-title="Фото 4">
+      <img src="kv1_4.jpg" alt="Фото 4">
+    </a>
+    <a href="kv1_5.jpg" data-lightbox="gallery1" data-title="Фото 5">
+      <img src="kv1_5.jpg" alt="Фото 5">
+    </a>
+  </div>
+</div>
         <div class="info">
           <h1>Уютная квартира с большой кроватью из натурального дерева</h1>
           <div class="address">📍 Калининец, 241</div>
