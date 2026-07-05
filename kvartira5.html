@@ -1,5 +1,7 @@
  <!DOCTYPE html>
 <html lang="ru">
+ <!-- Подключение Lightbox2 (CSS) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">  
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -170,8 +172,18 @@
   text-align: center;
   width: 100%;
 }
+   .images a {
+  display: block;        /* чтобы ссылка занимала всю ширину картинки */
+  text-decoration: none; /* убираем подчёркивание */
+}
+.thumbnails a {
+  display: block;
+  text-decoration: none;
+}
   </style>
 </head>
+ <!-- Подключение Lightbox2 (CSS) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">  
 <body>
 
 <header class="header">
@@ -190,18 +202,30 @@
 
      <section class="section">
       <div class="hero-detail">
-        <div class="images">
-          <!-- Главное фото -->
-          <img src="kv5_main.jpg" alt="Квартира 257">
-          <!-- Миниатюры — убраны инлайн стили, теперь они квадратные -->
-          <div class="thumbnails">
-            <img src="kv5_1.jpg" alt="Фото 1">
-            <img src="kv5_2.jpg" alt="Фото 2">
-            <img src="kv5_3.jpg" alt="Фото 3">
-            <img src="kv5_4.jpg" alt="Фото 4">
-            <img src="kv5_5.jpg" alt="Фото 5">
-          </div>
-        </div>
+       <div class="images">
+  <!-- Главное фото -->
+  <a href="kv5_main.jpg" data-lightbox="gallery5" data-title="Квартира 257 - главная">
+    <img src="kv5_main.jpg" alt="Квартира 257">
+  </a>
+  <!-- Миниатюры -->
+  <div class="thumbnails">
+    <a href="kv5_1.jpg" data-lightbox="gallery5" data-title="Фото 1">
+      <img src="kv5_1.jpg" alt="Фото 1">
+    </a>
+    <a href="kv5_2.jpg" data-lightbox="gallery5" data-title="Фото 2">
+      <img src="kv5_2.jpg" alt="Фото 2">
+    </a>
+    <a href="kv5_3.jpg" data-lightbox="gallery5" data-title="Фото 3">
+      <img src="kv5_3.jpg" alt="Фото 3">
+    </a>
+    <a href="kv5_4.jpg" data-lightbox="gallery5" data-title="Фото 4">
+      <img src="kv5_4.jpg" alt="Фото 4">
+    </a>
+    <a href="kv5_5.jpg" data-lightbox="gallery5" data-title="Фото 5">
+      <img src="kv5_5.jpg" alt="Фото 5">
+    </a>
+  </div>
+</div>
 
         <div class="info">
           <h1>Комфортная квартира рядом с КПП</h1>
