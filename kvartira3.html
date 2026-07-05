@@ -3,6 +3,8 @@
 <!-- Подключение Lightbox2 (CSS) -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css"> 
 <head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/airbnb.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Квартира 249 – ApartHome</title>
@@ -184,7 +186,10 @@
 </head>
 <!-- Подключение Lightbox2 (CSS) -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css"> 
-<body>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ru.js"></script>
+<script src="flatpickr-init.js"></script>
+ <body>
 
 <header class="header">
   <div class="container header-inner">
@@ -273,25 +278,32 @@
       </div>
 
       <div class="section" id="booking">
-        <h2 class="section-title" style="text-align: center; width: 100%;">Забронировать эту квартиру</h2>
-        <div class="form-wrap">
-          <form action="https://formspree.io/f/xrewrwyb" method="POST">
-            <input type="hidden" name="apartment" value="Калининец 249">
-            <label for="name">Ваше имя</label>
-            <input type="text" id="name" name="name" placeholder="Иван" required>
-            <label for="phone">Телефон</label>
-            <input type="tel" id="phone" name="phone" placeholder="+7 (912) 345-67-89" required>
-            <label for="dates">Даты заезда и выезда</label>
-            <input type="text" id="dates" name="dates" placeholder="Например: 10–13 июля">
-            <label for="guests">Количество гостей</label>
-            <input type="number" id="guests" name="guests" placeholder="2" min="1" max="2">
-            <label for="message">Комментарий (пожелания)</label>
-            <textarea id="message" name="message" rows="3" placeholder="Дополнительные пожелания..."></textarea>
-            <button type="submit" class="btn-primary">Отправить заявку</button>
-            <p style="font-size:13px; color:#5a6a7a; margin-top:12px; text-align:center;">После отправки я свяжусь с вами в течение 15 минут</p>
-          </form>
-        </div>
-      </div>
+  <h2 class="section-title">Забронировать эту квартиру</h2>
+  <div class="form-wrap">
+    <form action="https://formspree.io/f/xrewrwyb" method="POST">
+      <input type="hidden" name="apartment" value="Калининец 249">
+
+      <label for="name">Ваше имя</label>
+      <input type="text" id="name" name="name" placeholder="Иван" required>
+
+      <label for="phone">Телефон</label>
+      <input type="tel" id="phone" name="phone" placeholder="+7 (912) 345-67-89" required>
+
+      <!-- ОДНО поле для диапазона дат (как в других квартирах) -->
+      <label for="dates">Даты заезда и выезда</label>
+      <input type="text" id="dates" name="dates" placeholder="Выберите даты" readonly>
+
+      <label for="guests">Количество гостей</label>
+      <input type="number" id="guests" name="guests" placeholder="2" min="1" max="3">  <!-- ← max изменён на 3 -->
+
+      <label for="message">Комментарий (пожелания)</label>
+      <textarea id="message" name="message" rows="3" placeholder="Дополнительные пожелания..."></textarea>
+
+      <button type="submit" class="btn-primary">Отправить заявку</button>
+      <p style="font-size:13px; color:#5a6a7a; margin-top:12px; text-align:center;">После отправки я свяжусь с вами в течение 15 минут</p>
+    </form>
+  </div>
+</div>
 
      <div class="detail-block">
         <h2>📍 Как нас найти</h2>
