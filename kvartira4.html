@@ -1,36 +1,89 @@
- <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Квартира 259 – ApartHome</title>
   <style>
-    /* Все стили такие же, как в index.html, плюс добавим стили для детальной страницы */
+   .btn-primary {
+  display: inline-block;
+  background: #22c55e;      /* ярко-зелёный */
+  color: #fff;
+  padding: 18px 48px;       /* крупнее */
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 20px;          /* крупный шрифт */
+  transition: 0.25s;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(34, 197, 94, 0.4); /* тень */
+  letter-spacing: 0.5px;
+}
+.btn-primary:hover {
+  background: #16a34a;      /* тёмно-зелёный при наведении */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(34, 197, 94, 0.5);
+}
+.btn-primary:active {
+  transform: translateY(0);
+}
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
     body { background: #f8f9fc; color: #1e2a3a; line-height: 1.5; }
     .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
     .header {
       background: #fff; box-shadow: 0 2px 12px rgba(0,0,0,0.06); padding: 18px 0; position: sticky; top: 0; z-index: 10;
     }
-    .header-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-    .logo { font-size: 24px; font-weight: 700; color: #0d6efd; }
-    .logo span { color: #1e2a3a; }
-    .contacts-header a { text-decoration: none; color: #1e2a3a; font-weight: 500; margin-left: 20px; }
-    .contacts-header a:hover { color: #0d6efd; }
-    .btn-phone { background: #0d6efd; color: #fff !important; padding: 8px 18px; border-radius: 30px; transition: 0.2s; }
-    .btn-phone:hover { background: #0b5ed7; }
-    .section { padding: 40px 0; }
-    .section-title { font-size: 28px; font-weight: 700; margin-bottom: 20px; }
-    .section-title::after { content: ''; display: block; width: 60px; height: 4px; background: #0d6efd; margin: 10px 0 0; border-radius: 4px; }
-    .btn-primary {
-      display: inline-block; background: #0d6efd; color: #fff; padding: 14px 40px; border-radius: 40px;
-      text-decoration: none; font-weight: 600; transition: 0.2s; border: none; cursor: pointer; font-size: 16px;
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px 15px;
     }
-    .btn-primary:hover { background: #0b5ed7; transform: translateY(-2px); }
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: #0d6efd;
+      flex-shrink: 0;
+    }
+    .contacts-header {
+     display: flex;
+     align-items: center;
+     flex-wrap: wrap;
+     gap: 8px 12px;
+    }
+    .contacts-header a {
+      text-decoration: none;
+      color: #1e2a3a;
+      font-weight: 500;
+      font-size: 15px
+      white-space: nowrap;
+    }
+    .contacts-header a:hover { color: #0d6efd; }
+    .btn-phone {
+      background: #0d6efd;
+      color: #fff !important;
+      padding: 8px 18px;
+      border-radius: 30px;
+      transition: 0.2s;
+    }
+   .btn-phone { 
+    background: #0d6efd; 
+    color: #fff !important;
+    padding: 8px 16px;
+    border-radius: 30px;
+    transition: 0.2s;
+    font-size: 14px
+    white-space: nowrap;
+    }
+    .btn-phone:hover { 
+     background: #0b5ed7; }
+    }
     .back-link { display: inline-block; margin-bottom: 20px; color: #0d6efd; text-decoration: none; font-weight: 500; }
     .back-link:hover { text-decoration: underline; }
 
-    /* Блоки детальной страницы */
+   /* Блоки детальной страницы */
     .hero-detail {
       display: flex; flex-wrap: wrap; gap: 30px; background: #fff; padding: 30px; border-radius: 24px;
       box-shadow: 0 4px 16px rgba(0,0,0,0.06); margin-bottom: 30px;
@@ -38,9 +91,34 @@
     .hero-detail .images {
       flex: 1 1 300px;
     }
-    .hero-detail .images img {
-      width: 100%; border-radius: 16px; margin-bottom: 10px;
+    .hero-detail .images img:first-child {
+      width: 100%;
+      max-height: 350px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin-bottom: 10px;
     }
+    /* Миниатюры — квадратные и ровные */
+    .thumbnails {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .thumbnails img {
+      width: 120px !important;
+      height: 120px !important;
+      object-fit: cover !important;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.2s;
+      flex-shrink: 0;
+      display: block;
+    }
+    .thumbnails img:hover {
+      opacity: 0.8;
+      transform: scale(1.03);
+    }
+
     .hero-detail .info {
       flex: 2 1 300px;
     }
@@ -66,7 +144,7 @@
 
     .form-wrap {
       background: #fff; padding: 30px; border-radius: 24px; max-width: 600px; margin: 0 auto;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
     }
     .form-wrap input, .form-wrap textarea {
       width: 100%; padding: 14px 18px; border: 1px solid #dce3ed; border-radius: 12px; margin-bottom: 18px;
@@ -83,7 +161,15 @@
     @media (max-width: 600px) {
       .hero-detail { padding: 20px; }
       .hero-detail .info h1 { font-size: 26px; }
+      .thumbnails img {
+        width: 80px !important;
+        height: 80px !important;
+      }
     }
+   #booking .section-title {
+  text-align: center;
+  width: 100%;
+}
   </style>
 </head>
 <body>
@@ -102,18 +188,21 @@
   <div class="container">
     <a href="index.html" class="back-link">← Назад к списку квартир</a>
 
-    <!-- Детальная информация о квартире -->
-    <section class="section">
+   <section class="section">
       <div class="hero-detail">
         <div class="images">
-          <img src="images/kv1_main.jpg" alt="Квартира 259">
-          <div style="display:flex; gap:10px; flex-wrap:wrap;">
-            <img src="images/kv1_1.jpg" alt="Фото 1" style="width:calc(50% - 5px);">
-            <img src="images/kv1_2.jpg" alt="Фото 2" style="width:calc(50% - 5px);">
-            <img src="images/kv1_3.jpg" alt="Фото 3" style="width:calc(33% - 7px);">
-            <img src="images/kv1_4.jpg" alt="Фото 4" style="width:calc(33% - 7px);">
-            <img src="images/kv1_5.jpg" alt="Фото 5" style="width:calc(33% - 7px);">
+          <!-- Главное фото -->
+          <img src="kv4_main.jpg" alt="Квартира 259">
+          <!-- Миниатюры — теперь они квадратные -->
+          <div class="thumbnails">
+            <img src="kv4_1.jpg" alt="Фото 1" style="width:calc(50% - 5px);">
+            <img src="kv4_2.jpg" alt="Фото 2" style="width:calc(50% - 5px);">
+            <img src="kv4_3.jpg" alt="Фото 3" style="width:calc(33% - 7px);">
+            <img src="kv4_4.jpg" alt="Фото 4" style="width:calc(33% - 7px);">
+            <img src="kv4_5.jpg" alt="Фото 5" style="width:calc(33% - 7px);">
           </div>
+        </div>
+
         </div>
         <div class="info">
           <h1>Просторная квартира с лаунж-балконом</h1>
@@ -137,7 +226,7 @@
         <ul>
           <li>🚭 Курить можно на улице или на балконе с открытым окном и закрытой дверью.</li>
           <li>🔇 Шуметь после 21:00 запрещено.</li>
-          <li>🐾 Животные запрещены (без исключений).</li>
+          <li>🐾 Животные за отдельную плату +1500р/сутки.</li>
           <li>🚫 Передача ключей третьим лицам запрещена.</li>
           <li>🧹 Квартира сдаётся в том же виде – при необходимости генеральной уборки залог удерживается полностью.</li>
           <li>🍾 За распитие спиртных напитков и жалобы соседей – моментальное выселение без возврата денег.</li>
@@ -158,11 +247,10 @@
         </div>
       </div>
 
-      <!-- Форма бронирования -->
       <div class="section" id="booking">
-        <h2 class="section-title">Забронировать эту квартиру</h2>
+        <h2 class="section-title" style="text-align: center; width: 100%;">Забронировать эту квартиру</h2>
         <div class="form-wrap">
-          <form action="https://formspree.io/f/ваш_код_формы" method="POST">
+          <form action="https://formspree.io/f/xrewrwyb" method="POST">
             <input type="hidden" name="apartment" value="Калининец 259">
             <label for="name">Ваше имя</label>
             <input type="text" id="name" name="name" placeholder="Иван" required>
@@ -180,16 +268,18 @@
         </div>
       </div>
 
-      <!-- Карта -->
-      <div class="detail-block">
+     <div class="detail-block">
         <h2>📍 Как нас найти</h2>
-        <div style="border-radius:16px; overflow:hidden;">
-          <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Aваш_идентификатор&source=constructor" width="100%" height="300" frameborder="0" allowfullscreen></iframe>
-        </div>
-      </div>
-
-    </section>
-  </div>
+        <div class="map-wrap">
+         <iframe 
+    src="https://yandex.ru/map-widget/v1/?ll=36.972681%2C55.552138&z=17&pt=36.972681%2C55.552138%2Cflag"  
+    width="100%" 
+    height="300" 
+    frameborder="0" 
+    allowfullscreen>
+  </iframe>
+</div>
+</div>
 </main>
 
 <footer class="footer">
@@ -203,4 +293,9 @@
 </footer>
 
 </body>
-</html>
+</html>  
+
+
+        
+
+      
